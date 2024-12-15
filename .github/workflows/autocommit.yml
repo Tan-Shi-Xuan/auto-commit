@@ -48,6 +48,7 @@ jobs:
 
       - name: GitHub Pull
         run: |
+          git config pull.rebase false
           git pull origin master
     
       - name: GitHub Push
