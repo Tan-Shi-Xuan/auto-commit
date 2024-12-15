@@ -45,14 +45,10 @@ jobs:
           rand=$[$RANDOM % ${#arr[@]}]
           
           git commit -m "${arr[$rand]}"
-
-      - name: GitHub Pull
-        run: |
-          git config pull.rebase false
-          git pull origin master
     
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.6.0
         with:
           directory: "."
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
