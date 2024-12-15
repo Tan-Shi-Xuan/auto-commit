@@ -46,12 +46,8 @@ jobs:
           
           git commit -m "${arr[$rand]}"
 
-      - name: Set up Git
+      - name: GitHub Pull
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "actions@github.com"
-          git fetch origin master
-          git checkout master
           git pull origin master
     
       - name: GitHub Push
